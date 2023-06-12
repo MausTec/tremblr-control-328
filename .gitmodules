@@ -1,0 +1,3 @@
+[submodule "lib/ts-code"]
+	path = lib/ts-code
+	url = https://github.com/MausTec/ts-code
