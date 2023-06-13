@@ -26,8 +26,8 @@ faults will always latch the `FAULT` state and shutdown motor control.
 
 See `PINOUT.h` for pinout constants:
 
-|---|---|---|---|
 |GPIO|Arduino Pin|Name|Description|
+|---|---|---|---|
 ||4|&lt; `FAULT`|Active HIGH when a hardware fault is latched.|
 ||5|&gt; `STATUS`|Status (red) LED output.|
 ||6|&gt; `FCLR`|Strobe this HIGH to reset the fault latch.|
