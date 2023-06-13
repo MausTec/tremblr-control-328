@@ -1,6 +1,11 @@
 #ifndef __PINOUT_h
 #define __PINOUT_h
 
+// Atmel GPIO
+#define AIR_OUT_PORT
+#define AIR_OUT_PIN
+
+// Arduino Pinout
 #define AIR_OUT_GPIO 8
 #define AIR_IN_GPIO 9
 #define PWM_SS_GPIO 10
