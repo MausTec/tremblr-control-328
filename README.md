@@ -1,6 +1,6 @@
 # ATMega328P-Based Tremblr-Compatible Control Board
 
-(board image here)
+![Image of the Tremblr-Compatible Control Board and its Receiver](doc/pcb_top.jpeg)
 
 ^- That's a drop-in controller board for Tremblr-like devices. It runs on 23V DC, supports 2 air valves and a DC motor driven 
 at ~12KHz PWM, and a 3-wire 24V cooling fan. It's protected by hardware stall detection on both the fan and motor. You can even 
@@ -39,8 +39,6 @@ See `PINOUT.h` for pinout constants:
 Please note that there is a pin header on the board that exposes the ADC pins for your convenience and exploration pleasure.
 The ADC should use the internal voltage reference if used, since that is tied to GND through a 0.1uF capacitor. If you want to
 adjust VRef you are welcome to bodge this.
-
-(adc header)
 
 ## Contributions
 
