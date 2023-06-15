@@ -2,7 +2,7 @@
 
 ![Image of the Tremblr-Compatible Control Board and its Receiver](doc/pcb_top.jpeg)
 
-^- That's a drop-in controller board for Tremblr-like devices. It runs on 23V DC, supports 2 air valves and a DC motor driven 
+^- That's a drop-in controller board for Tremblr-like devices. It runs on 24V DC, supports 2 air valves and a DC motor driven 
 at ~12KHz PWM, and a 3-wire 24V cooling fan. It's protected by hardware stall detection on both the fan and motor. You can even 
 bodge a current sense wire for motor position feedback if you want.
 
@@ -11,7 +11,10 @@ control everything. The hardware-based stall detection overrides firmware by def
 
 This firmware implements both the original remote control and TS-Code over USB Serial.
 
-This board is designed for experimenting and prototyping, and as such you're doing so at your own risk!
+This board is designed for experimenting and prototyping, and as such you're doing so at your own risk! This is not the final
+control board that will be distributed by Maus-Tec electronics, and as such isn't directly compatible with the Edge-o-Matic
+or other Maus-Bus accessories. You can, however, teach XToys to control this since it uses the same TS-Code commands as the
+Mercury 1000! Please enjoy this prototype controller board!
 
 ## GPIO Allocation
 
