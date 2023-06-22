@@ -14,6 +14,8 @@ void setup() {
     Hardware::init();
     Remote::init();
     Serial.begin(115200);
+
+    Serial.println("READY");
 }
 
 void loop_safety();
@@ -30,7 +32,7 @@ void loop() {
     // Register TS-Code capabilities
     static tscode_device_vendor_details_t vendor = {
         .vendor = "Maus-Tec Electronics",
-        .device = "Tremblr Control 238",
+        .device = "Trembl Control 328",
         .version = "v1",
     };
 
@@ -99,18 +101,20 @@ void loop_tscode() {
 
     if (cmd_buffer_idx != last_cmd_buffer_idx) {
         last_cmd_buffer_idx = cmd_buffer_idx;
-        Serial.printf("Buffer: \"");
+        Serial.print("Buffer: \"");
 
         for (size_t i = 0; i < cmd_buffer_idx; i++) {
             char c = cmd_buffer[i];
             if (isprint(c)) {
-                Serial.printf("%c", cmd_buffer[i]);
+                Serial.print(cmd_buffer[i]);
             } else {
-                Serial.printf("<%02x>", c);
+                Serial.print("<");
+                Serial.print(c, HEX);
+                Serial.print(">");
             }
         }
 
-        Serial.printf("\"\n");
+        Serial.print("\"\n");
         Hardware::setStatusLED(HIGH, 100);
     }
 }
@@ -121,7 +125,8 @@ void loop_remote() {
 
     if (button == last_button) return;
     last_button = button;
-    Serial.printf("Button: %02X\n", button);
+    Serial.print("Button:");
+    Serial.println(button, HEX);
 
     if (button != 0x00) {
         Hardware::setStatusLED(HIGH, 300);
